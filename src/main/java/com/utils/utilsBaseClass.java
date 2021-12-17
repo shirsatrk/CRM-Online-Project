@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,7 +19,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class utilsBaseClass {
 
-	WebDriver driver;
+	public static WebDriver driver;
 	public static ExtentReports report;
 	public static ExtentSparkReporter spark;
 	public static ExtentTest test;
@@ -30,7 +31,7 @@ public class utilsBaseClass {
 		FileInputStream fis;
 		String value = null;
 		try {
-			fis = new FileInputStream("cofig.properties");
+			fis = new FileInputStream("src/main/resources/config.properties");
 			Properties prop = new Properties();
 			prop.load(fis);
 			value = prop.getProperty(key);
@@ -44,11 +45,12 @@ public class utilsBaseClass {
 		return value;
 	}
 
-	public void initialisation(String browser) {
+	public WebDriver initialisation(String browser) {
 		String browserPath = browser.toLowerCase();
 		System.out.println("Browser with name " + browser + " is opening.");
 
 		if (browser.equalsIgnoreCase("chrome")) {
+			System.out.print("i am in chrome.");
 			System.setProperty("webdriver.chrome.driver", readProperties(browserPath));
 			driver = new ChromeDriver();
 		}
@@ -61,9 +63,8 @@ public class utilsBaseClass {
 		else if (browser.equalsIgnoreCase("ie")) {
 			System.setProperty("webdriver.ie.driver", readProperties(browserPath));
 			driver = new InternetExplorerDriver();
-		} else {
-			System.out.println("Please enter a valid web browser. Entered browser " + browser + " is not valid.");
-		}
+		} 
+		return driver;
 	}
 
 	public void reportSetupInitialisation() {
