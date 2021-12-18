@@ -1,22 +1,23 @@
 package com.testPages;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.pages.ActivityPage;
 import com.pages.LoginPage;
+import com.pages.OpportunitiesPage;
 import com.utils.utilsBaseClass;
 
-public class ActivityTestPage extends utilsBaseClass {
+public class OpportunitiesTestPage extends utilsBaseClass{
+
 	LoginPage lp;
-	ActivityPage ap;
+	OpportunitiesPage op;
 
 	@BeforeClass
 	public void setup() {
 		lp = new LoginPage(driver);
-		ap = lp.OpenLoginPage().OpenHomePage().navigateToActivityPage();
+		op = lp.OpenLoginPage().OpenHomePage().navigateToOpportunitiesPage();
 	}
 
 	@Test
@@ -24,5 +25,5 @@ public class ActivityTestPage extends utilsBaseClass {
 
 		Assert.assertEquals(false, false);
 	}
-
+	
 }

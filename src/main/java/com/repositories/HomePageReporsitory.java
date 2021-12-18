@@ -5,19 +5,13 @@ import org.openqa.selenium.support.FindBy;
 
 import com.utils.utilsBaseClass;
 
-public class LoginPageRepository extends utilsBaseClass{
+public class HomePageReporsitory extends utilsBaseClass{
 
-	@FindBy (id = "LoginForm_username")
-	public WebElement uname;
-	
-	@FindBy (id = "LoginForm_password")
-	public WebElement password;
-	
-	@FindBy (xpath = "//button")
-	public WebElement loginButton;
-	
 	@FindBy (linkText = "Activity")
-	public WebElement activiyButton;
+	public WebElement activityButton;
+	
+	@FindBy (linkText = "Accounts")
+	public WebElement accountsButton;
 	
 	@FindBy (linkText = "Contacts")
 	public WebElement contactsButton;
@@ -33,8 +27,6 @@ public class LoginPageRepository extends utilsBaseClass{
 	
 	@FindBy (linkText = "More")
 	public WebElement moreButton;
-	
-		
 	
 	
 }
