@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testPages.AccountsTestPage">
+      <class name="com.testPages.Opportunitis.OpportunitiesTestPage">
         <methods>
-          <include name="trial"/>
           <include name="setup"/>
+          <include name="Actionslist"/>
         </methods>
-      </class> <!-- com.testPages.AccountsTestPage -->
+      </class> <!-- com.testPages.Opportunitis.OpportunitiesTestPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

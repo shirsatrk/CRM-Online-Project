@@ -23,8 +23,7 @@ public class AccountsTestPage extends utilsBaseClass {
 
 	@Test
 	public void trial() {
-
-		Assert.assertEquals(false, false);
+				Assert.assertEquals(false, false);
 	}
 	
 }
